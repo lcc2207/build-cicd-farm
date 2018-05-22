@@ -1,0 +1,9 @@
+API_HOST: demo.com
+API_KEY_ID:
+API_SCHEME: https
+API_SECRET_KEY:
+SSL_VERIFY_PEER: true
+accountId: '1'
+colored_output: true
+envId: '5'
+view: json
