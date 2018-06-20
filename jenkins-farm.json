@@ -3,10 +3,10 @@
         "schema_version": "v1beta0-7.9.0"
     },
     "farm": {
-        "name": "jenkins-demo",
+        "name": "jenkins-CI-CD-demo",
         "description": "",
         "project": {
-            "id": "75c84cfe-c5e8-4fc4-b1e4-e68665a4a30c"
+            "id": "1682b63d-6d28-4b5f-8438-3cf058f89a6c"
         },
         "timezone": "America\/New_York",
         "launchOrder": "simultaneous",
@@ -14,7 +14,7 @@
     },
     "roles": [
         {
-            "alias": "base-ubuntu1604-hvm",
+            "alias": "Jenkins",
             "role": {
                 "name": "base-ubuntu1604-hvm"
             },

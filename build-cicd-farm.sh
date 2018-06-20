@@ -32,7 +32,7 @@ fi
 echo $scriptid
 
 # convert script to json
-export body=$(python -c 'import os, sys, json; y=open(os.environ["SCRIPT_NAME"], "r").read(); print json.dumps(y)')
+export body=$(python -c 'import os, sys, json; y=open(os.environ["SCRIPT_NAME"], "r").read(); print(json.dumps(y))')
 
 # clean up files
 rm $SCRIPT_NAME.json
@@ -45,9 +45,11 @@ cat <<EOF >> $SCRIPT_NAME.json
 EOF
 
 # create script version
+echo "adding scripts"
 scalr-ctl --config $config script-versions create --scriptId $scriptid --stdin < $SCRIPT_NAME.json
 
 # Create farm and get ID
+echo "creating farm"
 export farm_template=$FName.json
 cat jenkins-farm.json  | jq '.farm.name=env.FName' > $farm_template
 export farmid=`scalr-ctl --config $config farms create-from-template --stdin < $farm_template | jq '.data.id'`
